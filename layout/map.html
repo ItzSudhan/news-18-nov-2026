@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>World News 18 Nov 2026</title>
+<style>
+  :root {
+    --ink: #0f1b2d;
+    --sea: #bcd9ea;
+    --land: #f3ecd9;
+    --coast: #a99f86;
+    --eu: #2f6db5;
+    --me: #e0702a;
+    --as: #d1394b;
+    --af: #2f9a5a;
+    --am: #7b4bb7;
+    --pa: #13979f;
+    --gl: #55606e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; background: var(--sea); }
+  body { position: relative; font-family: "Avenir Next Condensed", "Arial Narrow", sans-serif; color: var(--ink); }
+
+  #world { position: absolute; left: 0; top: 0; }
+
+  header {
+    position: absolute; left: 0; top: 0; width: 1024px; height: 96px;
+    background: var(--ink); color: #fff; padding: 6px 18px 0;
+  }
+  header .kicker { font-weight: 800; font-size: 19px; letter-spacing: .16em; color: #f5b82e; }
+  header .count { position: absolute; right: 18px; top: 7px; font-weight: 800; font-size: 19px; letter-spacing: .06em; color: #f5b82e; }
+  header .count b { color: #fff; }
+  header h1 { font-weight: 800; font-size: 66px; line-height: 64px; letter-spacing: .005em; white-space: nowrap; }
+
+  .card {
+    position: absolute; background: #fff; border: 2.5px solid var(--ink); border-radius: 6px;
+    box-shadow: 3px 3px 0 rgba(15,27,45,.35);
+  }
+  .card .img { position: relative; overflow: hidden; border-bottom: 2px solid var(--ink); border-radius: 3px 3px 0 0; }
+  .card .img svg { display: block; width: 100%; height: 100%; }
+  .card .tag {
+    position: absolute; left: 5px; bottom: 4px; background: var(--ink); color: #fff;
+    font-weight: 700; font-size: 9.5px; letter-spacing: .05em; padding: 1px 4px 0; text-transform: uppercase;
+  }
+  .card h3 { font-weight: 800; font-size: 16.5px; line-height: 16px; margin: 4px 6px 2px; }
+  .card.big h3 { font-size: 20px; line-height: 19px; }
+  .card p { font-weight: 600; font-size: 10.5px; line-height: 11.5px; margin: 0 6px 4px; color: #3a4350; }
+  .badge {
+    position: absolute; top: -12px; left: -12px; width: 25px; height: 25px; border-radius: 50%;
+    border: 2.5px solid #fff; box-shadow: 0 0 0 2px var(--ink);
+    color: #fff; font-weight: 800; font-size: 13px; line-height: 21px; text-align: center; z-index: 5;
+  }
+
+  #legend {
+    position: absolute; background: #fff; border: 2.5px solid var(--ink); border-radius: 6px; padding: 7px 10px;
+    box-shadow: 3px 3px 0 rgba(15,27,45,.35);
+  }
+  #legend .big { font-weight: 800; font-size: 21px; line-height: 21px; }
+  #legend .big em { font-style: normal; color: #c98a00; }
+  #legend ul { list-style: none; columns: 2; margin-top: 5px; }
+  #legend li { font-weight: 700; font-size: 11px; line-height: 15px; white-space: nowrap; }
+  #legend li i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+
+  #also {
+    position: absolute; left: 0; top: 850px; width: 1024px; height: 174px; background: #f7f3ea;
+    border-top: 3px solid var(--ink); padding: 5px 14px 0;
+  }
+  #also h2 { font-weight: 800; font-size: 13px; letter-spacing: .14em; border-bottom: 1.5px solid var(--ink); padding-bottom: 1px; }
+  #also ol { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: column; grid-template-rows: repeat(8, 15.5px); column-gap: 10px; margin-top: 3px; }
+  #also li { font-weight: 600; font-size: 11.6px; line-height: 15.5px; white-space: nowrap; overflow: hidden; }
+  #also li b { font-weight: 800; }
+  #also li span.n {
+    display: inline-block; min-width: 17px; padding: 0 2px; margin-right: 3px; text-align: center; color: #fff;
+    font-weight: 800; font-size: 10px; line-height: 12px; border-radius: 2px; vertical-align: 1px;
+  }
+  #also .src { position: absolute; left: 14px; right: 14px; bottom: 4px; font-weight: 600; font-size: 9.6px; color: #4a5260; }
+  #also .src b { float: right; }
+</style>
+</head>
+<body>
+
+<svg id="world" width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#a9cbe0" stroke-width=".6"/>
+    </pattern>
+  </defs>
+  <rect width="1024" height="1024" fill="var(--sea)"/>
+  <rect width="1024" height="1024" fill="url(#grid)"/>
+  <g id="land"></g>
+  <g id="water"></g>
+  <g id="leaders"></g>
+  <g id="dots"></g>
+</svg>
+
+<header>
+  <div class="kicker">THE WORLD ON</div>
+  <div class="count"><b>46</b> STORIES · <b>6</b> CONTINENTS</div>
+  <h1>WEDNESDAY 18 NOVEMBER 2026</h1>
+</header>
+
+<div id="cards"></div>
+
+<div id="legend">
+  <div class="big"><em>14</em> on the map,<br><em>32</em> more below</div>
+  <ul>
+    <li><i style="background:var(--eu)"></i>Europe</li>
+    <li><i style="background:var(--me)"></i>Middle East</li>
+    <li><i style="background:var(--as)"></i>Asia</li>
+    <li><i style="background:var(--af)"></i>Africa</li>
+    <li><i style="background:var(--am)"></i>Americas</li>
+    <li><i style="background:var(--pa)"></i>Pacific</li>
+    <li><i style="background:var(--gl)"></i>Science · climate</li>
+  </ul>
+</div>
+
+<section id="also">
+  <h2>ALSO ON 18 NOVEMBER</h2>
+  <ol id="list"></ol>
+  <div class="src">Sources: Al Jazeera, Anadolu, EFE, Kyiv Independent, Times of Israel, ONS, NASA, ESPN, allAfrica, UN News, AP via partners. Claims by one side are attributed. <b>Original drawings</b></div>
+</section>
+
+<script>
+// ---------- Projection: Mercator, lon -168..180 across 1024 px ----------
+const LON0 = -168, SPAN = 348, Y0 = 575;
+const S = 1024 / (SPAN * Math.PI / 180);
+function px(lon, lat) {
+  const x = (lon - LON0) / SPAN * 1024;
+  const r = Math.max(-80, Math.min(84, lat)) * Math.PI / 180;
+  const y = Y0 - S * Math.log(Math.tan(Math.PI / 4 + r / 2));
+  return [x, y];
+}
+
+// ---------- Coastlines: simplified [lon, lat] rings ----------
+const LAND = {
+  northAmerica: [[-168,65.6],[-166,68.9],[-156.8,71.3],[-148,70.3],[-141,69.6],[-135,69.2],[-129,70],[-124,69.4],[-117,68.8],[-110,68],[-102,67.8],[-96,68.5],[-94.2,71.8],[-91.5,70],[-88,68.6],[-85,69.6],[-82,67],[-86.2,66.5],[-90,64.5],[-92,62.8],[-94,61.1],[-94.2,58.8],[-92.4,57],[-88,56.5],[-85,55.3],[-82.3,55.1],[-81,52.6],[-79.5,51.3],[-78.9,52.4],[-78.7,54.4],[-77.5,55.6],[-76.6,57.5],[-78,58.6],[-77.5,60.2],[-77.9,62.4],[-74,62.3],[-71.5,61.1],[-69.6,59.4],[-67.5,58.3],[-65.5,59.5],[-64.5,60.3],[-62,57.5],[-60.4,55.5],[-57.5,54],[-55.7,52.2],[-57,51.4],[-60,50.2],[-64,50.2],[-66.5,50.2],[-69.5,48.5],[-66,49.1],[-64.4,48.8],[-64.8,47.6],[-64.5,46.2],[-61,45.7],[-60.2,46],[-61.5,45.1],[-63.5,44.6],[-65.8,43.6],[-66.2,44.6],[-64.5,45.4],[-67,45],[-68.5,44.3],[-70.2,43.6],[-70.6,42.6],[-70,41.7],[-71.5,41.4],[-74,40.6],[-74,39.5],[-75.5,38.5],[-76,37],[-75.5,35.3],[-77.9,34],[-79.9,32.8],[-81.4,30.3],[-80.1,26.9],[-80.4,25.2],[-81.8,25.9],[-82.7,27.8],[-83.6,29.9],[-85,29.7],[-87.5,30.3],[-89.5,30.2],[-89.2,29.1],[-91,29.3],[-93.8,29.7],[-95,29.3],[-97.2,27.7],[-97.4,25.9],[-97.8,22.3],[-96.1,19.2],[-94.5,18.2],[-91,18.6],[-90.4,21],[-87.1,21.5],[-87.5,19],[-88.2,17.5],[-88.5,15.8],[-86,16],[-83.4,15.2],[-83.6,11.8],[-83.5,10.5],[-81.8,9],[-79.5,9.6],[-77.2,8.6],[-77.9,7.2],[-78,7.6],[-80,7.3],[-82,8.2],[-85.7,9.9],[-87.5,13],[-88.5,13.2],[-91.5,14],[-94,16],[-96.5,15.7],[-99.9,16.8],[-103.5,18.3],[-105.3,20.5],[-105.6,22.5],[-107.5,24.5],[-109.5,26.5],[-110.9,27.9],[-112.7,30.3],[-114.7,31.7],[-113,29],[-112,26],[-109.9,23],[-112,24.8],[-114.1,28],[-116.6,31.8],[-117.2,32.7],[-118.4,34],[-120.6,34.6],[-121.9,36.6],[-122.5,37.8],[-123.8,39.4],[-124.4,40.4],[-124.5,42.8],[-124,46.2],[-124.7,48.4],[-125.5,50],[-127.5,50.8],[-130,54.3],[-133,56.5],[-135.3,57.1],[-137.5,58.9],[-140,59.8],[-144,60],[-146.5,60.7],[-149.5,59.9],[-151.5,59.2],[-152,60.5],[-154,59],[-156.5,57.5],[-162,55],[-164.8,54.4],[-161,56],[-158,57.5],[-157,58.7],[-162,58.6],[-162,60],[-165.4,60.6],[-164.8,62.6],[-161,64.3],[-160.8,64.8],[-164,64.5],[-166.2,65.2]],
+  newfoundland: [[-59.4,47.6],[-56,49.6],[-55.6,51.6],[-53.6,49.5],[-52.7,47.6],[-53.6,46.6],[-55.5,47.1],[-58.6,47.6]],
+  baffin: [[-80,73.7],[-73,71.5],[-68,70],[-61.3,66.6],[-64,64],[-65.5,62.9],[-68,62.2],[-72,63.6],[-75,64.5],[-78,64.5],[-81,67],[-84.5,70],[-89,71.5],[-85,73.7]],
+  victoria: [[-117,69],[-119,71.5],[-115,73.3],[-105,72.8],[-101.5,70],[-106,68.8],[-113,68.4]],
+  banks: [[-125,71.8],[-123.5,74.3],[-117,74.2],[-115.5,73.3],[-120,71.4]],
+  arcticIslands: [[-110,75.5],[-104,77],[-96,78],[-92,81],[-75,83],[-62,82.3],[-70,78.5],[-79,76.2],[-80.5,74.5],[-92,74.5],[-97,75.5],[-102,75.8]],
+  greenland: [[-58,82],[-30,83.5],[-18,81.7],[-18,77],[-20,75],[-22,71],[-25,69],[-32,68],[-37,65.6],[-41,63],[-43.5,60],[-48,61],[-50.5,64],[-51.7,64.2],[-53.5,66.9],[-51.5,69],[-54,70.5],[-55.5,72.6],[-58.5,75.5],[-66,76.3],[-72.5,78.5],[-63,81]],
+  iceland: [[-24,65.5],[-22,66.4],[-16.5,66.5],[-13.6,65.2],[-14.5,64.3],[-18,63.4],[-21.5,63.8],[-22.7,64.8]],
+  cuba: [[-84.9,21.9],[-82.4,23.1],[-80,23],[-77.5,21.8],[-74.1,20.2],[-77.7,19.9],[-80,21.7],[-82.5,22.2]],
+  hispaniola: [[-74.4,18.5],[-72.8,19.9],[-70,19.8],[-68.3,18.6],[-70,18.2],[-71.7,17.7],[-73.6,18.2]],
+  jamaica: [[-78.3,18.4],[-76.3,18.2],[-76.8,17.9],[-77.8,18]],
+  southAmerica: [[-77.2,8.6],[-75.5,10.4],[-74.2,11.2],[-71.6,12.4],[-71.6,10.9],[-70,12.2],[-68,10.5],[-64.5,10.3],[-62,10.7],[-60.8,8.6],[-58.2,6.8],[-55.2,5.9],[-52.3,4.9],[-51,4],[-50,1.8],[-49.5,-0.2],[-48.5,-1.4],[-44.3,-2.5],[-41.8,-2.9],[-38.5,-3.7],[-35.2,-5.4],[-34.8,-7.1],[-35,-9],[-37,-11],[-38.5,-13],[-39,-15],[-39.7,-19.5],[-40.3,-20.3],[-41,-22],[-43.2,-22.9],[-45,-23.6],[-48.6,-26.5],[-48.5,-28],[-50.2,-30.5],[-52.1,-32.1],[-53.5,-33.7],[-54.9,-34.9],[-56.2,-34.9],[-57.8,-34.4],[-58.4,-34.6],[-57.4,-35.6],[-56.7,-36.3],[-57.6,-38.2],[-62.3,-38.8],[-62.5,-40.5],[-65,-41],[-64.2,-42.5],[-65.3,-44.9],[-67.5,-46],[-65.8,-47.8],[-68.4,-50.1],[-69,-51.6],[-68.4,-52.4],[-68.5,-53],[-66.5,-54.7],[-68.6,-55.2],[-71,-54.2],[-74,-52],[-75.5,-48.5],[-74,-45.5],[-73.8,-43],[-73.6,-41.5],[-73.5,-39],[-73.1,-36.8],[-71.6,-33],[-71.5,-30],[-70.4,-23.6],[-70.2,-18.5],[-71.4,-17.5],[-76.2,-14],[-77.1,-12],[-79,-8.1],[-81.3,-5.1],[-81.3,-4.5],[-80.4,-3.4],[-80,-2.2],[-81,-1],[-80.1,0.8],[-79,1.6],[-77.6,3.8],[-77,3.9],[-77.4,6.5],[-77.9,7.2]],
+  africa: [[-5.8,35.8],[-2,35.1],[0,35.8],[3,36.8],[8,36.9],[11,37.1],[10.5,36],[10.1,33.8],[11.5,33.1],[13.2,32.9],[15.2,32.3],[19,30.3],[20,31],[20,32.1],[21.8,32.9],[23.2,32.2],[25,31.6],[29.9,31.2],[32.3,31.3],[34.2,31.3],[34.9,29.5],[34.3,27.8],[33.6,28.3],[32.6,29.9],[33.8,27.2],[35.5,23.9],[37.2,21],[37.2,19.6],[38.5,18],[39.5,15.6],[41.7,13.5],[43.3,11.9],[43.1,11.6],[44,10.4],[45,10.4],[51.2,11.8],[51,10.4],[49.5,6.5],[48,4.5],[45.3,2],[42.5,-0.5],[40.2,-3],[39.7,-4],[39,-6.5],[39.3,-8],[40.4,-10.5],[40.6,-15],[36.9,-17.9],[34.8,-19.8],[35.5,-22],[35.5,-24],[32.6,-25.9],[32.9,-28],[31,-29.9],[27.9,-33],[25.6,-34],[22,-34.2],[20,-34.8],[18.4,-34.3],[18.4,-33.9],[18,-32],[16.5,-28.6],[15.2,-27],[14.5,-22.9],[13.5,-20],[11.8,-17],[12.2,-14],[13.4,-12.6],[13.2,-8.8],[12.3,-6],[11.8,-4.8],[9.5,-1],[9.4,0.4],[9.8,2.9],[9.7,4],[8.5,4.6],[6,4.3],[5,6],[3.4,6.4],[1.2,6.1],[-0.2,5.5],[-2,4.8],[-4,5.3],[-7.5,4.4],[-10.8,6.3],[-13.2,8.5],[-15,10.8],[-16.7,12.3],[-17.5,14.7],[-16.5,16.5],[-16,18.1],[-16.5,20.5],[-17,20.8],[-15,23.7],[-14.5,26.1],[-13.2,27.7],[-11.5,28.2],[-9.8,29.5],[-9.6,30.4],[-9.8,31.5],[-8.6,33.2],[-7.6,33.6],[-6.8,34.1]],
+  madagascar: [[49.3,-12],[50.4,-15.5],[49.4,-17.8],[48.4,-21],[47.1,-24.9],[45.2,-25.5],[44,-24],[43.3,-22],[44.4,-19.5],[44,-17],[46.3,-15.8],[47.9,-13.6]],
+  eurasia: [[-5.6,36],[-6.4,36.8],[-7.4,37.2],[-8.9,37],[-8.8,38.7],[-9.5,38.8],[-8.9,41.2],[-9.3,43],[-8,43.7],[-5.7,43.6],[-3.8,43.5],[-1.8,43.4],[-1.4,44.7],[-1.2,46.2],[-2.2,47.3],[-4.7,47.9],[-4.8,48.4],[-3,48.8],[-1.6,48.7],[-1.6,49.6],[0.2,49.4],[1.6,50.2],[2.5,51.1],[3.6,51.4],[4.5,52.4],[4.8,53],[6.5,53.4],[8.8,54],[8.6,55.5],[8.2,56.7],[10.6,57.7],[10.5,56.5],[10.9,56.3],[10,55],[11,54.1],[13.4,54.3],[14.3,53.9],[16.5,54.5],[18.6,54.4],[19.9,54.5],[21,55.3],[21.1,56.8],[22,57.6],[24.1,57],[23.5,58.5],[23.5,59.2],[24.8,59.4],[28,59.5],[30.2,59.9],[29,60.2],[26.5,60.4],[22.9,59.8],[21.4,61],[21.6,63.1],[24.5,64.9],[25.4,65],[24,65.8],[22.5,65.8],[21.3,64.5],[20.3,63.8],[17.3,62.4],[17.2,60.7],[18.8,59.8],[18.1,59.3],[16.6,57.7],[16.4,56.7],[14.2,55.4],[12.9,55.6],[12.8,56.6],[11.9,57.7],[11.2,59.1],[10.7,59.9],[9.8,59],[8,58.1],[5.7,58.9],[5.2,60.4],[5,62],[7.7,63.1],[10.4,63.4],[11,64.5],[12.5,66],[14.4,67.3],[16,68.5],[18.9,69.6],[23.6,70.6],[25.8,71.1],[28.5,70.9],[31,70.3],[33.1,69.3],[36.5,69.1],[41,67.7],[39.8,66.1],[35,66.3],[34.5,64.5],[37,63.9],[40.5,64.5],[43.5,66.2],[44.2,68.5],[46,68.3],[53,68.8],[54.5,68.3],[58,68.9],[60.5,69.9],[66.5,69.5],[67,71],[69.5,73],[72.5,72.8],[72.3,71],[73.5,68.5],[75,72.5],[78,72.4],[80.5,73.6],[86.5,74.8],[87,75.5],[95,76],[101,76.5],[104.3,77.7],[112,76.5],[113.5,73.6],[118,73.6],[126,73.5],[129,72],[140,72.5],[146,72.3],[150,71.5],[157,71],[160,70],[161.5,69.5],[167,69.8],[170,70.1],[176,69.9],[180,68.8],[185,69],[190.3,66.1],[186,64.5],[182,65],[177.5,64.7],[179,62.5],[174,61.8],[170,60],[163,59.8],[164,59],[163.2,57.8],[162.5,56],[160,54],[158.6,53],[156.7,51],[156,52.5],[155.6,55.5],[156.5,57.8],[160,61],[158,61.8],[154,59.4],[150.8,59.6],[146,59.3],[143,59.3],[140.7,58.2],[137.6,54.4],[140.5,53.1],[141.3,52.9],[140.4,48.4],[138.5,46.7],[135.5,43.8],[132,43.1],[130.7,42.3],[129.7,40.8],[128.3,38.6],[129.4,36],[129,35.1],[126.4,34.5],[126.5,36.9],[126.6,37.4],[125,37.8],[125.3,39.5],[124.4,39.9],[121.6,38.9],[122,40.5],[121,40.8],[119.5,39.9],[117.7,39],[118.5,37.5],[119,37.2],[120.5,37.8],[122.6,37.4],[120.3,36],[119.3,34.8],[120.5,33],[121.9,31.7],[121.9,31.1],[122,30],[121.5,28.5],[120.2,27],[119.7,25.8],[118.1,24.5],[116.5,23.2],[114.2,22.3],[113.6,22.1],[111,21.5],[110.2,20.3],[109.7,21.5],[108.5,21.6],[106.7,20.7],[105.8,19],[106.5,17.5],[108.2,16.1],[109.2,13.8],[109.3,12],[108,10.8],[106.8,10.4],[105,8.6],[104.8,10.4],[103.5,10.6],[102.9,11.6],[101,12.7],[100.6,13.5],[99.9,12.5],[99.2,10.3],[100.3,8.4],[101.3,6.9],[102.2,6.2],[103.4,4.6],[103.4,2.5],[104.2,1.4],[103.5,1.3],[101.4,2.8],[100.4,4.8],[100.3,5.4],[100.1,6.5],[98.3,7.9],[98.6,10],[98.2,13.5],[97.6,16.5],[95.3,15.8],[94.2,16],[94.4,18.9],[93,20],[92.3,21.4],[91.8,22.3],[90.5,22.1],[89,21.8],[87,21.5],[86.5,20],[85,19.3],[83.3,17.7],[82.2,16.6],[80.3,15.5],[80.3,13.1],[79.8,11.5],[79.4,10.3],[78.4,9],[77.5,8.1],[76.3,9.9],[74.8,12.9],[73.8,15.5],[72.8,19],[72.6,21.5],[72.6,22.3],[70.5,20.8],[69,22.3],[70,22.8],[68.5,23.5],[67,24.8],[64,25.3],[61.6,25.2],[58.8,25.6],[57,27],[56.3,27.2],[54,26.7],[51.5,27.8],[50.8,28.9],[50,30],[48.5,30],[48,29.4],[49.5,27],[50.2,26.2],[50.8,24.8],[51.2,26.1],[51.6,25.3],[51.6,24.3],[54.4,24.5],[55.3,25.3],[56.1,26.2],[56.4,24.5],[58.5,23.6],[59.8,22.4],[58.6,20.5],[57.8,19],[55.5,17.5],[54,17],[52.2,15.6],[49.5,14.6],[45,12.8],[43.4,12.7],[42.8,14.8],[42.6,16.8],[41.2,19],[39.2,21.5],[38,24.1],[36.5,26],[35,28],[34.9,29.5],[34.2,31.3],[34.8,32.1],[35,32.8],[35.5,33.9],[35.8,35.5],[36.2,36.6],[35.5,36.6],[34.6,36.8],[32.5,36.1],[30.7,36.9],[29,36.6],[27.4,37],[27,38.4],[26.2,39.4],[26.4,40.2],[25,40.9],[23.8,40.5],[23.5,40],[22.6,40.5],[23,39.3],[24,38.2],[23.2,37.9],[22.9,36.5],[22.5,36.4],[21.7,36.8],[21.1,37.8],[21.3,38.3],[20.7,39],[20,39.7],[19.4,40.4],[19.5,41.8],[18.5,42.4],[16.4,43.5],[15.2,44.2],[14.5,45.3],[13.6,45.6],[12.3,45.4],[12.5,44.3],[13.6,43.6],[14.5,42.1],[16.1,41.4],[16.9,41.1],[18.5,40.1],[17.2,40.4],[16.6,39.7],[17.1,39],[16,38],[15.6,38.2],[16,39.4],[15.6,40.1],[14.3,40.8],[13,41.3],[12.2,41.8],[10.5,42.9],[10.3,43.5],[9.7,44.1],[8.9,44.4],[7.7,43.8],[7.3,43.7],[6,43.1],[5.4,43.3],[4.5,43.5],[3.1,43.1],[3.2,41.9],[2.2,41.4],[0.9,41],[-0.3,39.5],[0.2,38.8],[-0.5,38.3],[-0.8,37.6],[-2,36.8],[-4.4,36.7]],
+  britain: [[-5.7,50.1],[-3.5,50.4],[-1,50.7],[1.4,51.2],[1.7,52.5],[0.3,53.4],[-0.1,54.5],[-1.6,55.6],[-2,57.1],[-3.2,58.6],[-5,58.6],[-5.8,57.5],[-5.6,56],[-4.9,55],[-3.4,54.9],[-3.2,54],[-3,53.3],[-4.6,53.3],[-4.2,52.4],[-5.3,51.8],[-3.2,51.4],[-4.5,51.2]],
+  ireland: [[-6.4,52.2],[-6.2,53.3],[-6,54.6],[-5.6,55.2],[-7.3,55.4],[-8.5,54.5],[-10,54.2],[-9.5,53],[-10.3,51.9],[-8.5,51.6]],
+  zealand: [[11.2,55.8],[12.6,56],[12.4,55.3],[11.3,55.2]],
+  sardinia: [[8.4,41.2],[9.8,40.9],[9.6,39.2],[8.4,39],[8.1,40.5]],
+  corsica: [[9.4,43],[9.6,42.1],[9.2,41.4],[8.6,41.9]],
+  sicily: [[12.4,38.1],[15.6,38.3],[15.1,36.7],[12.5,37.6]],
+  crete: [[23.5,35.5],[26.3,35.3],[24.5,34.9]],
+  cyprus: [[32.3,35],[34.6,35.7],[33.9,34.9],[32.7,34.7]],
+  novayaZemlya: [[52,71.5],[55,73.5],[57,75.5],[60,76.5],[68,77],[66,76],[59,74.3],[56,72.5],[53.5,70.8]],
+  sriLanka: [[79.9,9.8],[80.2,9.8],[81.9,7.5],[81.2,6.2],[80.1,6],[79.8,8]],
+  taiwan: [[121.5,25.3],[122,24.8],[121.4,23],[120.8,21.9],[120.1,23],[120.6,24.5]],
+  hainan: [[108.6,19.2],[110,20.1],[111,19.6],[110.5,18.4],[109.5,18.2]],
+  honshu: [[130.9,33.95],[132.5,35.5],[135.2,35.7],[136.7,37.3],[139,37.9],[140,39.8],[140,40.6],[141.4,41.4],[141.5,40.5],[142,39.5],[141,38.3],[140.9,36.9],[140.6,35.7],[139.8,35],[138.8,34.6],[137,34.6],[136.8,34.3],[135.8,33.5],[135.1,34.3],[133,34.4],[131.5,34]],
+  kyushu: [[130,33.5],[131,33.9],[132,33],[131.4,31.4],[130.6,31.1],[129.7,32.8]],
+  shikoku: [[132.5,33.5],[134.7,34.2],[134.2,33.2],[133,32.8]],
+  hokkaido: [[140,41.4],[139.9,42.3],[141.5,45.4],[143.5,44.3],[145.5,43.3],[144,42.9],[143.2,42],[141,42.5]],
+  sakhalin: [[142.1,46],[141.7,48],[142.2,51],[142.6,54.3],[143.3,53],[143.2,49.2],[144.6,48.9],[143,47]],
+  luzon: [[120.6,18.5],[122.3,18.4],[121.7,15.8],[122.5,14.3],[124.1,12.6],[122.6,13.6],[121,13.8],[120.6,14.5],[120,16],[120.3,16.6]],
+  visayas: [[122,11.8],[125.5,11.5],[125,10],[123.3,9.2],[122.4,10.5]],
+  mindanao: [[122,7],[123.6,8.3],[125.4,9.8],[126.6,7.3],[125.4,5.6],[123.7,7.7]],
+  palawan: [[117.2,8.4],[119.7,11.2],[119.3,10.2],[117.6,8.2]],
+  borneo: [[110.3,1.6],[111.5,2.8],[113,3.2],[115,4.9],[116.8,7],[118.1,5.8],[119.2,5.1],[117.9,4.2],[118,1],[116.8,-1.2],[116.3,-3.5],[114.6,-3.4],[111.5,-3.2],[110.2,-2.9],[109.3,0],[109,1.7]],
+  sumatra: [[95.3,5.6],[97.5,5.2],[100,2.5],[102,1.5],[104.4,-1.8],[106,-3.1],[105.9,-5.8],[104.5,-5.9],[102.3,-4],[100.4,-1],[98.7,1.7],[96.5,3.7]],
+  java: [[105.2,-6.8],[106.8,-6.1],[108.6,-6.7],[110.4,-6.9],[112.7,-7.2],[114.4,-7.8],[114.5,-8.7],[112,-8.3],[110.4,-8.1],[108,-7.7],[106.4,-7.4]],
+  sulawesi: [[119.4,-5.1],[120.4,-5.6],[120.9,-2.6],[121.3,-4.8],[123.3,-4.6],[122,-1.7],[123.4,-0.9],[121,-1.2],[120.5,0.5],[121.5,1],[124.8,1.5],[122,0.4],[120.1,0.7],[119.6,-0.9],[118.8,-3]],
+  newGuinea: [[131.3,-0.9],[134,-0.9],[135,-3.3],[138,-1.6],[141,-2.6],[145.8,-5.2],[147.5,-6.1],[147.8,-8],[150.2,-10.6],[147.2,-9.5],[144.5,-7.8],[142.5,-9.2],[141,-9.1],[138.8,-8.3],[137.6,-5.3],[134.5,-4],[132.8,-4.1],[132.2,-2.8]],
+  timor: [[124,-10.2],[127.3,-8.4],[125,-9]],
+  australia: [[113.7,-21.8],[114.2,-26.3],[113.3,-26],[114.6,-28.8],[115.7,-31.9],[115,-34.3],[117.9,-35],[121.9,-33.9],[124,-33],[126,-32.3],[131,-31.5],[134.2,-32.8],[135.8,-34.8],[137.5,-33],[137.8,-32.5],[138.1,-34],[138.5,-35.5],[139.6,-37],[141,-38],[143.6,-38.8],[144.9,-37.9],[146.3,-39.1],[148,-37.8],[150,-37.5],[150.2,-35.7],[151.2,-33.9],[152.5,-32.3],[153.6,-28.6],[153.1,-27.5],[153,-25.3],[151.3,-23.8],[149.2,-21.1],[146.8,-19.3],[145.8,-16.9],[145.3,-14.9],[143.5,-14],[142.5,-10.7],[141.9,-12.7],[141.5,-15.5],[140.8,-17.5],[139.5,-17.5],[137,-16],[135.5,-14.8],[136.9,-12.2],[132.6,-11.4],[130.8,-12.4],[129.6,-14.9],[128.1,-15.2],[126.1,-14],[123.6,-17.3],[122.2,-18],[121,-19.5],[118.6,-20.3],[116.7,-20.6],[114.2,-21.8]],
+  tasmania: [[144.6,-40.7],[148.3,-40.9],[148,-43.2],[146.9,-43.6],[145.2,-42.2]],
+  nzNorth: [[172.7,-34.4],[174.3,-35.5],[174.8,-36.8],[175.9,-37.5],[178.5,-37.7],[177.9,-39.1],[176.9,-39.5],[176.2,-41.3],[174.8,-41.3],[175.2,-40.3],[174.3,-39.6],[173.8,-39.2],[174.6,-38],[174.1,-36.4]],
+  nzSouth: [[172.7,-40.5],[174.3,-41.7],[173.1,-43.1],[172.7,-43.8],[171.2,-44.4],[170.5,-45.9],[168.4,-46.6],[166.5,-46],[167.8,-44.6],[170.3,-43.1],[171.4,-41.7],[172.1,-40.9]]
+};
+// Inland seas drawn back in sea colour
+const WATER = {
+  blackSea: [[29,41.2],[31.5,41.2],[35.1,42],[37.5,41],[39.7,41],[41.6,41.6],[41.6,42.6],[39.7,43.6],[37.5,44.7],[36.6,45.3],[35.4,45],[33.8,44.4],[32.5,45.4],[33.5,46.1],[31.5,46.6],[30.7,46.5],[29.7,45.3],[28.6,44.2],[27.9,43.2],[28,41.9]],
+  azov: [[35.2,45.4],[36.6,45.4],[37.7,46.6],[39.2,47.2],[38,47.1],[35.5,46.4],[34.9,45.8]],
+  caspian: [[47.6,45.6],[49.2,46.6],[51.5,47],[53,46.5],[53.1,45],[51.3,44.5],[51.3,43.2],[52.8,41.8],[53,40],[54,38.5],[53.9,37.3],[51.5,36.8],[49,37.5],[48.9,38.4],[49.5,40.2],[49.9,40.4],[48.6,41.8],[47.5,43],[47.4,44.5]]
+};
+
+function ringPath(ring) {
+  return 'M' + ring.map(p => px(p[0], p[1]).map(v => v.toFixed(1)).join(',')).join('L') + 'Z';
+}
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  parent.appendChild(e);
+  return e;
+}
+const landG = document.getElementById('land');
+for (const k in LAND) el('path', { d: ringPath(LAND[k]), fill: 'var(--land)', stroke: 'var(--coast)', 'stroke-width': 1, 'stroke-linejoin': 'round' }, landG);
+const waterG = document.getElementById('water');
+for (const k in WATER) el('path', { d: ringPath(WATER[k]), fill: 'var(--sea)', stroke: 'var(--coast)', 'stroke-width': 1 }, waterG);
+
+// ---------- Vignettes (original drawings, viewBox 0 0 200 90) ----------
+const V = {
+  iran: `<rect width="200" height="90" fill="#16244a"/>
+    <circle cx="20" cy="14" r="1" fill="#fff"/><circle cx="60" cy="8" r="1" fill="#fff"/><circle cx="150" cy="12" r="1" fill="#fff"/><circle cx="185" cy="26" r="1" fill="#fff"/>
+    <path d="M0 72 Q60 64 120 70 T200 66 V90 H0Z" fill="#c9a66b"/>
+    <path d="M118 70 h56 v-14 q-28 -14 -56 0z" fill="#7b8794" stroke="#2b3440" stroke-width="1.5"/>
+    <rect x="140" y="62" width="12" height="8" fill="#2b3440"/>
+    <g fill="#d9dde3" stroke="#0f1b2d" stroke-width="1"><path d="M30 30 l14 4 l-14 4 l3 -4z"/><path d="M58 18 l14 4 l-14 4 l3 -4z"/><path d="M48 46 l14 4 l-14 4 l3 -4z"/></g>
+    <g stroke="#ffcf5a" stroke-width="1" stroke-dasharray="2 3" fill="none"><path d="M0 26 L30 34"/><path d="M0 12 L58 22"/><path d="M0 44 L48 50"/></g>
+    <g fill="#ffd23f"><path d="M100 24 l4 8 l9 1 l-7 5 l3 9 l-9 -5 l-8 5 l2 -9 l-7 -5 l9 -1z"/><path d="M128 40 l3 5 l6 1 l-5 3 l2 6 l-6 -3 l-5 3 l1 -6 l-4 -3 l6 -1z"/></g>
+    <path d="M190 70 L104 30" stroke="#ff8a3d" stroke-width="1.5" stroke-dasharray="3 2"/>`,
+  putinxi: `<rect width="200" height="90" fill="#fde9d9"/>
+    <g fill="#e8b9a2"><rect x="4" y="22" width="16" height="50"/><rect x="24" y="10" width="12" height="62"/><rect x="164" y="16" width="14" height="56"/><rect x="182" y="28" width="16" height="44"/></g>
+    <rect x="44" y="9" width="112" height="16" fill="#0f1b2d"/><text x="100" y="21" font-family="Avenir Next Condensed" font-weight="800" font-size="11" fill="#fff" text-anchor="middle" letter-spacing="1">APEC 2026 · SHENZHEN</text>
+    <g><rect x="48" y="28" width="18" height="12" fill="#fff" stroke="#999" stroke-width=".5"/><rect x="48" y="32" width="18" height="4" fill="#1c57a5"/><rect x="48" y="36" width="18" height="4" fill="#d52b1e"/><line x1="48" y1="28" x2="48" y2="72" stroke="#555" stroke-width="1.2"/></g>
+    <g><rect x="134" y="28" width="18" height="12" fill="#de2910"/><path d="M137 30 l1 2.2 l2.4 .2 l-1.8 1.5 l.6 2.3 l-2.2 -1.3 l-2 1.3 l.5 -2.3 l-1.8 -1.5 l2.4 -.2z" fill="#ffde00"/><line x1="152" y1="28" x2="152" y2="72" stroke="#555" stroke-width="1.2"/></g>
+    <g fill="#2a3446"><circle cx="82" cy="38" r="7"/><path d="M71 90 V58 q0 -12 11 -12 q11 0 13 12 l6 6 l-4 4 l-6 -4 V90z"/></g>
+    <g fill="#3d4a62"><circle cx="118" cy="38" r="7"/><path d="M129 90 V58 q0 -12 -11 -12 q-11 0 -13 12 l-6 6 l4 4 l6 -4 V90z"/></g>
+    <rect x="0" y="80" width="200" height="10" fill="#b0453b"/>`,
+  odesa: `<defs><linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2a5c"/><stop offset="1" stop-color="#f08a4b"/></linearGradient></defs>
+    <rect width="200" height="90" fill="url(#dusk)"/>
+    <g fill="#7d7d86" opacity=".9"><circle cx="128" cy="26" r="13"/><circle cx="142" cy="18" r="11"/><circle cx="156" cy="26" r="12"/><circle cx="114" cy="34" r="9"/></g>
+    <circle cx="136" cy="56" r="14" fill="#ffb347"/><circle cx="136" cy="58" r="8" fill="#ffe08a"/>
+    <g fill="#1d1a2b"><rect x="0" y="58" width="22" height="32"/><rect x="24" y="50" width="16" height="40"/><path d="M44 90 V60 h34 V90z"/><path d="M48 60 q13 -18 26 0z"/><rect x="58" y="36" width="6" height="12"/><rect x="82" y="54" width="18" height="36"/><rect x="104" y="64" width="16" height="26"/><rect x="152" y="58" width="20" height="32"/><rect x="176" y="48" width="24" height="42"/></g>
+    <g fill="#ffd27a"><rect x="5" y="64" width="3" height="3"/><rect x="12" y="72" width="3" height="3"/><rect x="28" y="58" width="3" height="3"/><rect x="180" y="56" width="3" height="3"/><rect x="190" y="66" width="3" height="3"/></g>
+    <g fill="#111"><path d="M84 18 l10 3 l-10 3 l2 -3z"/><path d="M100 10 l10 3 l-10 3 l2 -3z"/></g>`,
+  trumpph: `<rect width="200" height="90" fill="#dff0f7"/>
+    <path d="M30 40 h140 l-8 -12 h-124z" fill="#f3f3f3" stroke="#0f1b2d" stroke-width="1.3"/>
+    <rect x="34" y="40" width="132" height="40" fill="#fbfbfb" stroke="#0f1b2d" stroke-width="1.3"/>
+    <g fill="#c9ced6"><rect x="42" y="44" width="6" height="36"/><rect x="62" y="44" width="6" height="36"/><rect x="132" y="44" width="6" height="36"/><rect x="152" y="44" width="6" height="36"/></g>
+    <rect x="86" y="54" width="28" height="26" fill="#7a5a3c"/>
+    <g><rect x="8" y="10" width="26" height="16" fill="#fff"/><g fill="#b22234"><rect x="8" y="10" width="26" height="2.3"/><rect x="8" y="14.6" width="26" height="2.3"/><rect x="8" y="19.2" width="26" height="2.3"/><rect x="8" y="23.8" width="26" height="2.2"/></g><rect x="8" y="10" width="11" height="9" fill="#3c3b6e"/><line x1="8" y1="10" x2="8" y2="80" stroke="#444" stroke-width="1.4"/></g>
+    <g><rect x="166" y="10" width="26" height="8" fill="#0038a8"/><rect x="166" y="18" width="26" height="8" fill="#ce1126"/><path d="M166 10 l12 8 l-12 8z" fill="#fff"/><circle cx="170" cy="18" r="1.8" fill="#fcd116"/><line x1="192" y1="10" x2="192" y2="80" stroke="#444" stroke-width="1.4"/></g>
+    <path d="M58 4 h84 a6 6 0 0 1 6 6 v8 a6 6 0 0 1 -6 6 h-50 l-8 7 v-7 h-26 a6 6 0 0 1 -6 -6 v-8 a6 6 0 0 1 6 -6z" fill="#fff" stroke="#0f1b2d" stroke-width="1.3"/>
+    <text x="100" y="18" font-family="Avenir Next Condensed" font-weight="800" font-size="11" fill="#0f1b2d" text-anchor="middle">“BIGGEST DEAL”</text>
+    <g transform="rotate(-8 150 62)"><rect x="128" y="50" width="44" height="22" fill="none" stroke="#d1394b" stroke-width="2"/><text x="150" y="65" font-family="Avenir Next Condensed" font-weight="800" font-size="9" fill="#d1394b" text-anchor="middle">NO TERMS</text></g>
+    <rect x="0" y="80" width="200" height="10" fill="#7fa36b"/>`,
+  voyager: `<rect width="200" height="90" fill="#070d1f"/>
+    <g fill="#fff"><circle cx="12" cy="10" r=".9"/><circle cx="44" cy="70" r=".9"/><circle cx="70" cy="14" r="1.1"/><circle cx="96" cy="80" r=".8"/><circle cx="120" cy="8" r="1"/><circle cx="160" cy="76" r=".9"/><circle cx="190" cy="12" r="1"/><circle cx="34" cy="40" r=".7"/><circle cx="140" cy="44" r=".7"/></g>
+    <circle cx="16" cy="56" r="6" fill="#3f8be0"/><path d="M12 54 q4 -3 7 1 q-2 3 -6 2z" fill="#5fbf6a"/>
+    <text x="16" y="74" font-family="Avenir Next Condensed" font-weight="700" font-size="8" fill="#9fb6d9" text-anchor="middle">EARTH</text>
+    <path d="M24 54 L140 36" stroke="#f5b82e" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <text x="78" y="38" font-family="Avenir Next Condensed" font-weight="800" font-size="11" fill="#f5b82e" text-anchor="middle" transform="rotate(-8.8 78 38)">24 LIGHT-HOURS</text>
+    <g transform="translate(160 34)"><ellipse cx="0" cy="0" rx="6" ry="15" fill="#e9edf2" stroke="#9aa6b5" stroke-width="1"/><rect x="2" y="-4" width="10" height="8" fill="#c8a24a"/><line x1="12" y1="0" x2="34" y2="-12" stroke="#cfd6df" stroke-width="1.2"/><line x1="10" y1="4" x2="30" y2="20" stroke="#cfd6df" stroke-width="1.2"/><circle cx="34" cy="-12" r="2" fill="#cfd6df"/></g>`,
+  nvidia: `<rect width="200" height="90" fill="#0f1e17"/>
+    <g transform="translate(14 20)"><rect x="6" y="6" width="38" height="38" rx="3" fill="#2a3a31" stroke="#76b900" stroke-width="2"/><rect x="16" y="16" width="18" height="18" fill="#76b900"/>
+    <g stroke="#9fb39f" stroke-width="2"><path d="M12 0v6M20 0v6M28 0v6M36 0v6M12 44v6M20 44v6M28 44v6M36 44v6M0 12h6M0 20h6M0 28h6M0 36h6M44 12h6M44 20h6M44 28h6M44 36h6"/></g></g>
+    <g fill="#3ecf6e"><rect x="92" y="62" width="14" height="18"/><rect x="112" y="52" width="14" height="28"/><rect x="132" y="40" width="14" height="40"/><rect x="152" y="26" width="14" height="54"/></g>
+    <path d="M88 60 L172 18" stroke="#fff" stroke-width="2.5"/><path d="M172 18 l-9 1 l5 6z" fill="#fff"/>
+    <text x="96" y="20" font-family="Avenir Next Condensed" font-weight="800" font-size="13" fill="#3ecf6e">KOSPI +1.99%</text>`,
+  uk: `<rect width="200" height="90" fill="#fdf4e3"/>
+    <path d="M30 34 h56 l-6 40 h-44z" fill="#c98a4b" stroke="#0f1b2d" stroke-width="1.5"/>
+    <path d="M38 34 q20 -26 40 0" fill="none" stroke="#0f1b2d" stroke-width="2"/>
+    <circle cx="44" cy="30" r="8" fill="#d1394b"/><rect x="54" y="18" width="10" height="18" fill="#f5b82e"/><circle cx="72" cy="30" r="7" fill="#7fbf4d"/>
+    <g transform="rotate(-10 140 46)"><path d="M104 30 h66 l14 16 l-14 16 h-66z" fill="#fff" stroke="#0f1b2d" stroke-width="2"/><circle cx="174" cy="46" r="3" fill="#0f1b2d"/>
+    <text x="137" y="56" font-family="Avenir Next Condensed" font-weight="800" font-size="26" fill="#d1394b" text-anchor="middle">3.6%</text></g>
+    <path d="M178 22 v-14 M172 14 l6 -7 l6 7" stroke="#d1394b" stroke-width="3" fill="none"/>`,
+  romania: `<rect width="200" height="90" fill="#eef1f4"/>
+    <path d="M0 40 H40 L46 22 L52 58 L58 14 L64 66 L70 26 L76 50 L82 34 L88 44 L94 40 H200" stroke="#d1394b" stroke-width="2" fill="none"/>
+    <g stroke="#0f1b2d" stroke-width="1.4" fill="#f7e2c6"><path d="M110 70 v-16 l12 -10 l12 10 v16z"/><path d="M146 70 v-12 l10 -8 l10 8 v12z"/></g>
+    <g fill="#8b5a3c"><path d="M108 54 l14 -12 l16 12z"/><path d="M144 58 l12 -10 l12 10z"/></g>
+    <path d="M0 70 H200 V90 H0z" fill="#9b8c6e"/><path d="M60 70 l8 6 l-4 4 l10 10" stroke="#3b3326" stroke-width="2" fill="none"/>
+    <text x="196" y="22" font-family="Avenir Next Condensed" font-weight="800" font-size="18" fill="#0f1b2d" text-anchor="end">M5.7</text>`,
+  alaska: `<rect width="200" height="90" fill="#e7f0f8"/>
+    <path d="M0 50 L30 22 L48 40 L70 14 L96 46 L120 30 L150 52 L200 40 V90 H0z" fill="#c7d5e2"/>
+    <path d="M70 14 l8 10 l-6 -2 l-4 4 l-4 -4z" fill="#fff"/>
+    <g id="seats"></g>
+    <path d="M40 88 a60 52 0 0 1 120 0" fill="none" stroke="#0f1b2d" stroke-width="1"/>
+    <g fill="#2f6db5"><circle cx="48" cy="84" r="4"/><circle cx="52" cy="72" r="4"/><circle cx="59" cy="61" r="4"/><circle cx="69" cy="52" r="4"/><circle cx="81" cy="46" r="4"/><circle cx="94" cy="43" r="4"/><circle cx="107" cy="43" r="4"/><circle cx="120" cy="46" r="4"/></g>
+    <g fill="#d1394b"><circle cx="131" cy="52" r="4"/><circle cx="141" cy="61" r="4"/><circle cx="148" cy="72" r="4"/><circle cx="152" cy="84" r="4"/></g>
+    <circle cx="120" cy="46" r="6.5" fill="none" stroke="#f5b82e" stroke-width="2.5"/>`,
+  mexico: `<rect width="200" height="90" fill="#3c8d40"/>
+    <g fill="#358539"><rect x="0" y="0" width="25" height="90"/><rect x="50" y="0" width="25" height="90"/><rect x="100" y="0" width="25" height="90"/><rect x="150" y="0" width="25" height="90"/></g>
+    <rect x="40" y="16" width="120" height="50" fill="none" stroke="#fff" stroke-width="3"/>
+    <g stroke="#fff" stroke-width=".7" opacity=".7"><path d="M48 16v50M58 16v50M68 16v50M78 16v50M88 16v50M98 16v50M108 16v50M118 16v50M128 16v50M138 16v50M148 16v50M40 26h120M40 36h120M40 46h120M40 56h120"/></g>
+    <circle cx="124" cy="40" r="9" fill="#fff" stroke="#0f1b2d" stroke-width="1.2"/><path d="M121 36 l5 0 l2 4 l-3 4 l-5 -1 l-1 -4z" fill="#0f1b2d"/>
+    <rect x="14" y="10" width="70" height="20" rx="3" fill="#0f1b2d"/><text x="49" y="24" font-family="Avenir Next Condensed" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">MEX 1–0 JAM</text>`,
+  cop: `<rect width="200" height="90" fill="#e3f1e6"/>
+    <circle cx="52" cy="46" r="30" fill="#4b90d6"/><path d="M34 30 q10 -6 18 2 q4 10 -6 12 q-8 6 -14 -2z M58 52 q12 -8 18 4 q-2 12 -14 10z" fill="#5fae5f"/>
+    <rect x="104" y="10" width="62" height="72" fill="#fff" stroke="#0f1b2d" stroke-width="1.5"/>
+    <text x="135" y="24" font-family="Avenir Next Condensed" font-weight="800" font-size="10" fill="#0f1b2d" text-anchor="middle">DRAFT 1</text>
+    <g stroke="#9aa3ad" stroke-width="2"><path d="M112 32h46M112 40h46M112 48h40M112 56h46M112 64h34"/></g>
+    <path d="M110 18 L160 76 M160 18 L110 76" stroke="#d1394b" stroke-width="5"/>
+    <rect x="160" y="56" width="34" height="18" rx="3" fill="#003399"/><text x="177" y="69" font-family="Avenir Next Condensed" font-weight="800" font-size="10" fill="#ffcc00" text-anchor="middle">EU: NO</text>`,
+  ethiopia: `<rect width="200" height="90" fill="#f4e1bd"/>
+    <path d="M0 62 Q30 40 60 56 T120 50 T200 58 V90 H0z" fill="#c69a5b"/>
+    <path d="M0 74 Q50 60 100 72 T200 70 V90 H0z" fill="#a97a43"/>
+    <path d="M96 10 V90" stroke="#0f1b2d" stroke-width="2" stroke-dasharray="5 4"/>
+    <g fill="#8a8f96" opacity=".85"><circle cx="60" cy="32" r="9"/><circle cx="70" cy="26" r="7"/><circle cx="140" cy="30" r="10"/><circle cx="152" cy="22" r="7"/></g>
+    <g fill="#ff9f43"><circle cx="64" cy="44" r="5"/><circle cx="144" cy="42" r="5"/></g>
+    <text x="90" y="22" font-family="Avenir Next Condensed" font-weight="800" font-size="9" fill="#0f1b2d" text-anchor="end">ETHIOPIA</text>
+    <text x="102" y="22" font-family="Avenir Next Condensed" font-weight="800" font-size="9" fill="#0f1b2d">ERITREA</text>`,
+  chile: `<rect width="200" height="90" fill="#dbe9f6"/>
+    <path d="M0 50 L30 18 L52 38 L80 10 L110 40 L140 16 L170 36 L200 22 V90 H0z" fill="#8c97a8"/>
+    <g fill="#fff"><path d="M30 18 l8 9 l-8 -2 l-7 3z"/><path d="M80 10 l9 10 l-9 -3 l-8 3z"/><path d="M140 16 l8 9 l-8 -2 l-7 3z"/></g>
+    <rect x="0" y="66" width="200" height="24" fill="#b5a58a"/>
+    <rect x="44" y="40" width="112" height="18" fill="#fff" stroke="#d1394b" stroke-width="2"/>
+    <text x="100" y="53" font-family="Avenir Next Condensed" font-weight="800" font-size="10.5" fill="#d1394b" text-anchor="middle">NO A LOS RECORTES</text>
+    <g fill="#2a3446"><circle cx="30" cy="62" r="4"/><circle cx="48" cy="64" r="4"/><circle cx="66" cy="62" r="4"/><circle cx="84" cy="64" r="4"/><circle cx="102" cy="62" r="4"/><circle cx="120" cy="64" r="4"/><circle cx="138" cy="62" r="4"/><circle cx="156" cy="64" r="4"/><circle cx="174" cy="62" r="4"/>
+    <rect x="26" y="66" width="8" height="18"/><rect x="44" y="68" width="8" height="18"/><rect x="62" y="66" width="8" height="18"/><rect x="80" y="68" width="8" height="18"/><rect x="98" y="66" width="8" height="18"/><rect x="116" y="68" width="8" height="18"/><rect x="134" y="66" width="8" height="18"/><rect x="152" y="68" width="8" height="18"/><rect x="170" y="66" width="8" height="18"/></g>
+    <g stroke="#2a3446" stroke-width="2"><path d="M48 58 V64M156 58V64"/></g>`,
+  gta: `<rect width="200" height="90" fill="#2b1846"/>
+    <circle cx="160" cy="44" r="28" fill="#fff" stroke="#f5b82e" stroke-width="4"/>
+    <path d="M160 44 V22 M160 44 V24" stroke="#0f1b2d" stroke-width="3.5" stroke-linecap="round"/><circle cx="160" cy="44" r="3" fill="#0f1b2d"/>
+    <text x="160" y="66" font-family="Avenir Next Condensed" font-weight="800" font-size="9" fill="#0f1b2d" text-anchor="middle">12:00 NZ</text>
+    <path d="M18 40 q0 -14 16 -14 h52 q16 0 16 14 l6 26 q2 10 -8 10 q-8 0 -12 -8 l-4 -8 h-48 l-4 8 q-4 8 -12 8 q-10 0 -8 -10z" fill="#e9e6f2" stroke="#0f1b2d" stroke-width="1.5"/>
+    <path d="M36 38 v12 M30 44 h12" stroke="#0f1b2d" stroke-width="3"/>
+    <g fill="#0f1b2d"><circle cx="82" cy="38" r="3"/><circle cx="90" cy="44" r="3"/><circle cx="74" cy="44" r="3"/><circle cx="82" cy="50" r="3"/></g>`
+};
+
+// ---------- Map stories ----------
+// x, y, w = card box; ih = picture height; dot = [lon, lat]; from = leader start on the card (absolute px)
+const C = {eu:'var(--eu)', me:'var(--me)', as:'var(--as)', af:'var(--af)', am:'var(--am)', pa:'var(--pa)', gl:'var(--gl)'};
+const CARDS = [
+  { n:1, big:true, col:C.me, x:640, y:290, w:180, ih:74, v:'iran', tag:'Kuwait · Bahrain', h:'Iran says its drones hit US base in Kuwait', p:'Kuwait, Bahrain report intercepts; Gulf states condemn', dot:[47.98,29.37], from:[652,0] },
+  { n:2, big:true, col:C.as, x:788, y:112, w:228, ih:84, v:'putinxi', tag:'Shenzhen', h:'Putin and Xi meet as APEC summit opens', p:'Xi: Moscow, Beijing should “lead” a multipolar world', dot:[114.06,22.54], from:[830,0] },
+  { n:3, big:true, col:C.eu, x:564, y:112, w:212, ih:80, v:'odesa', tag:'Odesa', h:'Russian strikes kill 4 in central Odesa', p:'141 drones launched overnight, Kyiv says', dot:[30.73,46.48], from:[606,0] },
+  { n:4, big:true, col:C.as, x:672, y:562, w:196, ih:74, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” Philippines trade deal', p:'Manila officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
+  { n:5, big:true, col:C.gl, x:176, y:112, w:212, ih:80, v:'voyager', tag:'Deep space', h:'Voyager 1 reaches one light-day from Earth', p:'NASA probe, launched 1977, is 25.9 bn km away', dot:null },
+  { n:6, col:C.as, x:872, y:300, w:144, ih:58, v:'nvidia', tag:'Seoul', h:'Nvidia’s $116bn quarter lifts Asian stocks', p:'', dot:[127,37.57], from:[884,0] },
+  { n:7, col:C.eu, x:318, y:318, w:152, ih:60, v:'uk', tag:'London', h:'UK inflation rises to 3.6%', p:'October, up from 3.5% (ONS)', dot:[-0.13,51.5], from:[0,397] },
+  { n:8, col:C.gl, x:318, y:458, w:152, ih:60, v:'cop', tag:'Antalya · COP31', h:'COP31: EU rejects first draft deal', p:'Second text expected', dot:[30.7,36.9], from:[0,476] },
+  { n:9, col:C.eu, x:400, y:112, w:152, ih:60, v:'romania', tag:'Vrancea', h:'Romania’s strongest quake since 2018', p:'Felt in Ukraine, Moldova', dot:[26.5,45.7], from:[536,0] },
+  { n:10, col:C.am, x:8, y:112, w:158, ih:60, v:'alaska', tag:'Alaska', h:'Democrat Peltola flips Senate seat', p:'Unseats Republican Sullivan', dot:[-149.9,61.2], from:[53,0] },
+  { n:11, col:C.af, x:494, y:562, w:162, ih:60, v:'ethiopia', tag:'Badme', h:'Ethiopia–Eritrea border clashes', p:'Fears of a wider war', dot:[37.8,14.9], from:[606,0] },
+  { n:12, col:C.am, x:8, y:604, w:162, ih:60, v:'chile', tag:'Santiago', h:'Chile unions march against Kast cuts', p:'', dot:[-70.65,-33.45], from:[0,680] },
+  { n:13, col:C.pa, x:872, y:712, w:144, ih:58, v:'gta', tag:'New Zealand', h:'GTA VI unlocks, NZ first', p:'At midnight local time', dot:[174.76,-36.85], from:[1000,0] },
+  { n:14, col:C.am, x:8, y:376, w:160, ih:60, v:'mexico', tag:'Monterrey', h:'Mexico beat Jamaica, reach Final Four', p:'Márquez’s first win as coach', dot:[-100.3,25.67], from:[0,480] }
+];
+
+const cardsDiv = document.getElementById('cards');
+const leadG = document.getElementById('leaders');
+const dotG = document.getElementById('dots');
+for (const c of CARDS) {
+  const d = document.createElement('div');
+  d.className = 'card' + (c.big ? ' big' : '');
+  d.style.left = c.x + 'px'; d.style.top = c.y + 'px'; d.style.width = c.w + 'px';
+  d.innerHTML = `<div class="badge" style="background:${c.col}">${c.n}</div>
+    <div class="img" style="height:${c.ih}px"><svg viewBox="0 0 200 90" preserveAspectRatio="xMidYMid slice">${V[c.v]}</svg><span class="tag">${c.tag}</span></div>
+    <h3>${c.h}</h3>${c.p ? `<p>${c.p}</p>` : '<p style="height:2px"></p>'}`;
+  cardsDiv.appendChild(d);
+  c.el = d;
+}
+// Leaders are drawn after layout so card heights are known
+for (const c of CARDS) {
+  if (!c.dot) continue;
+  const [dx, dy] = px(c.dot[0], c.dot[1]);
+  const r = c.el.getBoundingClientRect();
+  let sx = c.from[0], sy = c.from[1];
+  if (sx === 0) sx = (dx < r.left) ? r.left : r.right;           // side exit
+  if (sy === 0) sy = (dy < r.top) ? r.top : r.bottom;            // top/bottom exit
+  el('line', { x1: sx, y1: sy, x2: dx, y2: dy, stroke: 'var(--ink)', 'stroke-width': 1.8 }, leadG);
+  el('circle', { cx: dx, cy: dy, r: 5.5, fill: c.col, stroke: '#fff', 'stroke-width': 2 }, dotG);
+}
+
+// ---------- The numbered list ----------
+const LIST = [
+  ['me','Israel','bills to undo judicial overhaul'],
+  ['me','Saudis','down Houthi missile aimed at Riyadh'],
+  ['me','Iran','army “monitoring” 3rd US carrier'],
+  ['me','Iraq','Quds Force chief Qaani in Baghdad'],
+  ['me','Syria','churches condemn attacks on Christians'],
+  ['pa','Australia','sanctions Israeli settler activists'],
+  ['eu','Russia','Ukraine drones reportedly hit 2 refineries'],
+  ['eu','Crimea','trains back on bridge, road still shut'],
+  ['eu','Norway, Sweden','$370m+ for Ukraine’s arms'],
+  ['eu','Germany','Pistorius calls US criticism “stupid”'],
+  ['gl','Ice hockey','IIHF hit by cyberattack'],
+  ['am','US','Rubio: no sign outages were cyberattacks'],
+  ['am','Anthropic','due to price record IPO tonight'],
+  ['am','Minnesota','man charged in attack on Somali driver'],
+  ['eu','Ireland','man indicted in US over Shannon C-130'],
+  ['as','India','William and Kate in Delhi to meet Modi'],
+  ['as','Pakistan','court hears Imran Khan appeals'],
+  ['am','Colombia','Hegseth hands over first US C-130'],
+  ['am','Venezuela','unions call 24-hour strike over pay'],
+  ['am','Paraguay','attorney general resigns'],
+  ['af','Mauritius','gives UK until December on Chagos'],
+  ['af','S. Africa','reprimands Nigeria’s new envoy'],
+  ['af','Guinea','224 jailed over illegal gold mining'],
+  ['af','Uganda','alarm over jailed Besigye’s health'],
+  ['af','Zimbabwe','5 in SA court over Ukraine war plot'],
+  ['af','Kenya','WFP feeds families fleeing Ethiopia'],
+  ['af','Ethiopia','El Niño, Iran war may add 1m poor'],
+  ['af','Malawi','no end date for fuel shortage'],
+  ['pa','Cook Islands','Cyclone Xavier warnings'],
+  ['gl','WHO','candidates for chief make their pitch'],
+  ['gl','FIFA','France’s Diallo to challenge Infantino'],
+  ['gl','Bond','Bezos “heavily involved” in casting']
+];
+const ol = document.getElementById('list');
+LIST.forEach((it, i) => {
+  const li = document.createElement('li');
+  li.innerHTML = `<span class="n" style="background:var(--${it[0]})">${i + 15}</span><b>${it[1]}:</b> ${it[2]}`;
+  ol.appendChild(li);
+});
+
+// legend placement
+const lg = document.getElementById('legend');
+lg.style.left = '344px'; lg.style.top = '732px'; lg.style.width = '230px';
+</script>
+</body>
+</html>
