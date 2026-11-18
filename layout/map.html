@@ -59,8 +59,8 @@
     border-top: 3px solid var(--ink); padding: 5px 14px 0;
   }
   #also h2 { font-weight: 800; font-size: 14px; letter-spacing: .14em; border-bottom: 1.5px solid var(--ink); padding-bottom: 1px; }
-  #also ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-flow: column; grid-template-rows: repeat(11, 18.6px); column-gap: 14px; margin-top: 4px; }
-  #also li { font-weight: 600; font-size: 13.4px; line-height: 18.6px; white-space: nowrap; overflow: hidden; }
+  #also ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-flow: column; grid-template-rows: repeat(11, 18.2px); column-gap: 14px; margin-top: 3px; }
+  #also li { font-weight: 600; font-size: 13.4px; line-height: 18.2px; white-space: nowrap; overflow: hidden; }
   #also li b { font-weight: 800; }
   #also li span.n {
     display: inline-block; min-width: 20px; padding: 0 2px; margin-right: 4px; text-align: center; color: #fff;
@@ -98,7 +98,7 @@
   <h2>32 MORE STORIES OF 18 NOVEMBER
     <span class="key"><i style="background:var(--eu)"></i>Europe <i style="background:var(--me)"></i>Middle East <i style="background:var(--as)"></i>Asia <i style="background:var(--af)"></i>Africa <i style="background:var(--am)"></i>Americas <i style="background:var(--pa)"></i>Pacific <i style="background:var(--gl)"></i>Global</span></h2>
   <ol id="list"></ol>
-  <div class="src">Sources: Al Jazeera, Anadolu, EFE, Kyiv Independent, Times of Israel, ONS, NASA, ESPN, allAfrica, UN News, AP via partners. Claims by one side are attributed. <b>Original drawings</b></div>
+  <div class="src">Sources: Al Jazeera, Anadolu, EFE, Kyiv Independent, Times of Israel, ONS, NASA, EarthSky, ESPN, allAfrica, UN News, Vice. Claims by one side are attributed. <b>Original drawings</b></div>
 </section>
 
 <script>
@@ -302,13 +302,13 @@ const CARDS = [
   { n:3, big:true, col:C.eu, x:564, y:112, w:212, ih:80, v:'odesa', tag:'Odesa', h:'Russian strikes kill 4 in central Odesa', p:'141 drones launched overnight, Kyiv says', dot:[30.73,46.48], from:[606,0] },
   { n:4, big:true, col:C.as, x:672, y:562, w:196, ih:70, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” trade deal in Manila', p:'Philippine officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
   { n:5, big:true, col:C.gl, x:176, y:112, w:212, ih:80, v:'voyager', tag:'Deep space', h:'Voyager 1 reaches one light-day from Earth', p:'NASA probe, launched 1977, is 25.9 bn km away', dot:null },
-  { n:6, col:C.as, x:872, y:300, w:144, ih:58, v:'nvidia', tag:'Seoul', h:'Nvidia’s $116bn quarter lifts Asian stocks', p:'', dot:[127,37.57], from:[884,0] },
+  { n:6, col:C.as, x:872, y:300, w:144, ih:58, v:'nvidia', tag:'Seoul', h:'Nvidia’s $116bn quarter lifts Asian stocks', p:'Revenue doubled from a year ago', dot:[127,37.57], from:[884,0] },
   { n:7, col:C.eu, x:318, y:318, w:152, ih:60, v:'uk', tag:'London', h:'UK inflation rises to 3.6%', p:'October, up from 3.5% (ONS)', dot:[-0.13,51.5], from:[0,397] },
   { n:8, col:C.gl, x:318, y:458, w:152, ih:60, v:'cop', tag:'Antalya · COP31', h:'COP31: EU rejects first draft deal', p:'Second text expected', dot:[30.7,36.9], from:[0,476] },
   { n:9, col:C.eu, x:400, y:112, w:152, ih:60, v:'romania', tag:'Vrancea', h:'Romania’s strongest quake since 2018', p:'Felt in Ukraine, Moldova', dot:[26.5,45.7], from:[536,0] },
   { n:10, col:C.am, x:8, y:112, w:158, ih:60, v:'alaska', tag:'Alaska', h:'Democrat Peltola flips Senate seat', p:'Unseats Republican Sullivan', dot:[-149.9,61.2], from:[53,0] },
   { n:11, col:C.af, x:494, y:562, w:162, ih:60, v:'ethiopia', tag:'Badme', h:'Ethiopia–Eritrea border clashes', p:'Fears of a wider war', dot:[37.8,14.9], from:[606,0] },
-  { n:12, col:C.am, x:8, y:604, w:162, ih:60, v:'chile', tag:'Santiago', h:'Chile unions march against Kast cuts', p:'', dot:[-70.65,-33.45], from:[0,680] },
+  { n:12, col:C.am, x:8, y:604, w:162, ih:60, v:'chile', tag:'Santiago', h:'Chile unions march against Kast cuts', p:'Nationwide CUT protest over the budget', dot:[-70.65,-33.45], from:[0,680] },
   { n:13, col:C.pa, x:880, y:470, w:136, ih:54, v:'gta', tag:'New Zealand', h:'GTA VI unlocks, NZ first', p:'At midnight local time', dot:[174.76,-36.85], from:[1004,0] },
   { n:14, col:C.am, x:8, y:376, w:160, ih:60, v:'mexico', tag:'Monterrey', h:'Mexico beat Jamaica, reach Final Four', p:'Márquez’s first win as coach', dot:[-100.3,25.67], from:[0,480] }
 ];
@@ -352,7 +352,7 @@ const LIST = [
   ['eu','Germany','Pistorius calls US criticism of strikes “stupid”'],
   ['gl','Ice hockey','world body IIHF hit by cyberattack'],
   ['am','US','Rubio: no evidence outages were cyberattacks'],
-  ['am','Anthropic','due to price record IPO tonight, trade Thursday'],
+  ['am','Anthropic','IPO due to price tonight, debut Thursday'],
   ['am','Minnesota','man charged over attack on Somali driver'],
   ['eu','Ireland','man indicted in US over Shannon C-130 damage'],
   ['as','India','William and Kate in Delhi to meet Modi'],
