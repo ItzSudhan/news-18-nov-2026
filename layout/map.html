@@ -42,36 +42,29 @@
     position: absolute; left: 5px; bottom: 4px; background: var(--ink); color: #fff;
     font-weight: 700; font-size: 9.5px; letter-spacing: .05em; padding: 1px 4px 0; text-transform: uppercase;
   }
-  .card h3 { font-weight: 800; font-size: 16.5px; line-height: 16px; margin: 4px 6px 2px; }
-  .card.big h3 { font-size: 20px; line-height: 19px; }
-  .card p { font-weight: 600; font-size: 10.5px; line-height: 11.5px; margin: 0 6px 4px; color: #3a4350; }
+  .card h3 { font-weight: 800; font-size: 18px; line-height: 17px; margin: 4px 6px 2px; }
+  .card.big h3 { font-size: 21.5px; line-height: 20px; }
+  .card p { font-weight: 600; font-size: 11px; line-height: 12px; margin: 0 6px 4px; color: #3a4350; }
   .badge {
     position: absolute; top: -12px; left: -12px; width: 25px; height: 25px; border-radius: 50%;
     border: 2.5px solid #fff; box-shadow: 0 0 0 2px var(--ink);
     color: #fff; font-weight: 800; font-size: 13px; line-height: 21px; text-align: center; z-index: 5;
   }
 
-  #legend {
-    position: absolute; background: #fff; border: 2.5px solid var(--ink); border-radius: 6px; padding: 7px 10px;
-    box-shadow: 3px 3px 0 rgba(15,27,45,.35);
-  }
-  #legend .big { font-weight: 800; font-size: 21px; line-height: 21px; }
-  #legend .big em { font-style: normal; color: #c98a00; }
-  #legend ul { list-style: none; columns: 2; margin-top: 5px; }
-  #legend li { font-weight: 700; font-size: 11px; line-height: 15px; white-space: nowrap; }
-  #legend li i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  #also h2 .key { float: right; font-weight: 700; font-size: 11.5px; letter-spacing: .02em; padding-top: 2px; }
+  #also h2 .key i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin: 0 3px 0 8px; vertical-align: -1px; }
 
   #also {
-    position: absolute; left: 0; top: 850px; width: 1024px; height: 174px; background: #f7f3ea;
+    position: absolute; left: 0; top: 772px; width: 1024px; height: 252px; background: #f7f3ea;
     border-top: 3px solid var(--ink); padding: 5px 14px 0;
   }
-  #also h2 { font-weight: 800; font-size: 13px; letter-spacing: .14em; border-bottom: 1.5px solid var(--ink); padding-bottom: 1px; }
-  #also ol { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: column; grid-template-rows: repeat(8, 15.5px); column-gap: 10px; margin-top: 3px; }
-  #also li { font-weight: 600; font-size: 11.6px; line-height: 15.5px; white-space: nowrap; overflow: hidden; }
+  #also h2 { font-weight: 800; font-size: 14px; letter-spacing: .14em; border-bottom: 1.5px solid var(--ink); padding-bottom: 1px; }
+  #also ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-flow: column; grid-template-rows: repeat(11, 18.6px); column-gap: 14px; margin-top: 4px; }
+  #also li { font-weight: 600; font-size: 13.4px; line-height: 18.6px; white-space: nowrap; overflow: hidden; }
   #also li b { font-weight: 800; }
   #also li span.n {
-    display: inline-block; min-width: 17px; padding: 0 2px; margin-right: 3px; text-align: center; color: #fff;
-    font-weight: 800; font-size: 10px; line-height: 12px; border-radius: 2px; vertical-align: 1px;
+    display: inline-block; min-width: 20px; padding: 0 2px; margin-right: 4px; text-align: center; color: #fff;
+    font-weight: 800; font-size: 11.5px; line-height: 14px; border-radius: 2px; vertical-align: 1px;
   }
   #also .src { position: absolute; left: 14px; right: 14px; bottom: 4px; font-weight: 600; font-size: 9.6px; color: #4a5260; }
   #also .src b { float: right; }
@@ -101,21 +94,9 @@
 
 <div id="cards"></div>
 
-<div id="legend">
-  <div class="big"><em>14</em> on the map,<br><em>32</em> more below</div>
-  <ul>
-    <li><i style="background:var(--eu)"></i>Europe</li>
-    <li><i style="background:var(--me)"></i>Middle East</li>
-    <li><i style="background:var(--as)"></i>Asia</li>
-    <li><i style="background:var(--af)"></i>Africa</li>
-    <li><i style="background:var(--am)"></i>Americas</li>
-    <li><i style="background:var(--pa)"></i>Pacific</li>
-    <li><i style="background:var(--gl)"></i>Science · climate</li>
-  </ul>
-</div>
-
 <section id="also">
-  <h2>ALSO ON 18 NOVEMBER</h2>
+  <h2>32 MORE STORIES OF 18 NOVEMBER
+    <span class="key"><i style="background:var(--eu)"></i>Europe <i style="background:var(--me)"></i>Middle East <i style="background:var(--as)"></i>Asia <i style="background:var(--af)"></i>Africa <i style="background:var(--am)"></i>Americas <i style="background:var(--pa)"></i>Pacific <i style="background:var(--gl)"></i>Global</span></h2>
   <ol id="list"></ol>
   <div class="src">Sources: Al Jazeera, Anadolu, EFE, Kyiv Independent, Times of Israel, ONS, NASA, ESPN, allAfrica, UN News, AP via partners. Claims by one side are attributed. <b>Original drawings</b></div>
 </section>
@@ -215,7 +196,7 @@ const V = {
     <path d="M190 70 L104 30" stroke="#ff8a3d" stroke-width="1.5" stroke-dasharray="3 2"/>`,
   putinxi: `<rect width="200" height="90" fill="#fde9d9"/>
     <g fill="#e8b9a2"><rect x="4" y="22" width="16" height="50"/><rect x="24" y="10" width="12" height="62"/><rect x="164" y="16" width="14" height="56"/><rect x="182" y="28" width="16" height="44"/></g>
-    <rect x="44" y="9" width="112" height="16" fill="#0f1b2d"/><text x="100" y="21" font-family="Avenir Next Condensed" font-weight="800" font-size="11" fill="#fff" text-anchor="middle" letter-spacing="1">APEC 2026 · SHENZHEN</text>
+    <rect x="34" y="9" width="132" height="16" fill="#0f1b2d"/><text x="100" y="21" font-family="Avenir Next Condensed" font-weight="800" font-size="11" fill="#fff" text-anchor="middle" letter-spacing="1">APEC 2026 · SHENZHEN</text>
     <g><rect x="48" y="28" width="18" height="12" fill="#fff" stroke="#999" stroke-width=".5"/><rect x="48" y="32" width="18" height="4" fill="#1c57a5"/><rect x="48" y="36" width="18" height="4" fill="#d52b1e"/><line x1="48" y1="28" x2="48" y2="72" stroke="#555" stroke-width="1.2"/></g>
     <g><rect x="134" y="28" width="18" height="12" fill="#de2910"/><path d="M137 30 l1 2.2 l2.4 .2 l-1.8 1.5 l.6 2.3 l-2.2 -1.3 l-2 1.3 l.5 -2.3 l-1.8 -1.5 l2.4 -.2z" fill="#ffde00"/><line x1="152" y1="28" x2="152" y2="72" stroke="#555" stroke-width="1.2"/></g>
     <g fill="#2a3446"><circle cx="82" cy="38" r="7"/><path d="M71 90 V58 q0 -12 11 -12 q11 0 13 12 l6 6 l-4 4 l-6 -4 V90z"/></g>
@@ -319,7 +300,7 @@ const CARDS = [
   { n:1, big:true, col:C.me, x:640, y:290, w:180, ih:74, v:'iran', tag:'Kuwait · Bahrain', h:'Iran says its drones hit US base in Kuwait', p:'Kuwait, Bahrain report intercepts; Gulf states condemn', dot:[47.98,29.37], from:[652,0] },
   { n:2, big:true, col:C.as, x:788, y:112, w:228, ih:84, v:'putinxi', tag:'Shenzhen', h:'Putin and Xi meet as APEC summit opens', p:'Xi: Moscow, Beijing should “lead” a multipolar world', dot:[114.06,22.54], from:[830,0] },
   { n:3, big:true, col:C.eu, x:564, y:112, w:212, ih:80, v:'odesa', tag:'Odesa', h:'Russian strikes kill 4 in central Odesa', p:'141 drones launched overnight, Kyiv says', dot:[30.73,46.48], from:[606,0] },
-  { n:4, big:true, col:C.as, x:672, y:562, w:196, ih:74, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” Philippines trade deal', p:'Manila officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
+  { n:4, big:true, col:C.as, x:672, y:562, w:196, ih:70, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” trade deal in Manila', p:'Philippine officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
   { n:5, big:true, col:C.gl, x:176, y:112, w:212, ih:80, v:'voyager', tag:'Deep space', h:'Voyager 1 reaches one light-day from Earth', p:'NASA probe, launched 1977, is 25.9 bn km away', dot:null },
   { n:6, col:C.as, x:872, y:300, w:144, ih:58, v:'nvidia', tag:'Seoul', h:'Nvidia’s $116bn quarter lifts Asian stocks', p:'', dot:[127,37.57], from:[884,0] },
   { n:7, col:C.eu, x:318, y:318, w:152, ih:60, v:'uk', tag:'London', h:'UK inflation rises to 3.6%', p:'October, up from 3.5% (ONS)', dot:[-0.13,51.5], from:[0,397] },
@@ -328,7 +309,7 @@ const CARDS = [
   { n:10, col:C.am, x:8, y:112, w:158, ih:60, v:'alaska', tag:'Alaska', h:'Democrat Peltola flips Senate seat', p:'Unseats Republican Sullivan', dot:[-149.9,61.2], from:[53,0] },
   { n:11, col:C.af, x:494, y:562, w:162, ih:60, v:'ethiopia', tag:'Badme', h:'Ethiopia–Eritrea border clashes', p:'Fears of a wider war', dot:[37.8,14.9], from:[606,0] },
   { n:12, col:C.am, x:8, y:604, w:162, ih:60, v:'chile', tag:'Santiago', h:'Chile unions march against Kast cuts', p:'', dot:[-70.65,-33.45], from:[0,680] },
-  { n:13, col:C.pa, x:872, y:712, w:144, ih:58, v:'gta', tag:'New Zealand', h:'GTA VI unlocks, NZ first', p:'At midnight local time', dot:[174.76,-36.85], from:[1000,0] },
+  { n:13, col:C.pa, x:880, y:470, w:136, ih:54, v:'gta', tag:'New Zealand', h:'GTA VI unlocks, NZ first', p:'At midnight local time', dot:[174.76,-36.85], from:[1004,0] },
   { n:14, col:C.am, x:8, y:376, w:160, ih:60, v:'mexico', tag:'Monterrey', h:'Mexico beat Jamaica, reach Final Four', p:'Márquez’s first win as coach', dot:[-100.3,25.67], from:[0,480] }
 ];
 
@@ -359,38 +340,38 @@ for (const c of CARDS) {
 
 // ---------- The numbered list ----------
 const LIST = [
-  ['me','Israel','bills to undo judicial overhaul'],
-  ['me','Saudis','down Houthi missile aimed at Riyadh'],
-  ['me','Iran','army “monitoring” 3rd US carrier'],
-  ['me','Iraq','Quds Force chief Qaani in Baghdad'],
-  ['me','Syria','churches condemn attacks on Christians'],
-  ['pa','Australia','sanctions Israeli settler activists'],
-  ['eu','Russia','Ukraine drones reportedly hit 2 refineries'],
-  ['eu','Crimea','trains back on bridge, road still shut'],
-  ['eu','Norway, Sweden','$370m+ for Ukraine’s arms'],
-  ['eu','Germany','Pistorius calls US criticism “stupid”'],
-  ['gl','Ice hockey','IIHF hit by cyberattack'],
-  ['am','US','Rubio: no sign outages were cyberattacks'],
-  ['am','Anthropic','due to price record IPO tonight'],
-  ['am','Minnesota','man charged in attack on Somali driver'],
-  ['eu','Ireland','man indicted in US over Shannon C-130'],
+  ['me','Israel','new majority starts bills to undo judicial overhaul'],
+  ['me','Saudis','say they downed Houthi missile aimed at Riyadh'],
+  ['me','Iran','army “monitoring” as a third US carrier arrives'],
+  ['me','Iraq','Quds Force chief Qaani in Baghdad for talks'],
+  ['me','Syria','church leaders condemn attacks on Christians'],
+  ['pa','Australia','sanctions Israeli activists over settlements'],
+  ['eu','Russia','Ukrainian drones reportedly hit 2 refineries'],
+  ['eu','Crimea','trains back on damaged bridge, road still shut'],
+  ['eu','Norway, Sweden','pledge $370m+ for Ukraine’s weapons'],
+  ['eu','Germany','Pistorius calls US criticism of strikes “stupid”'],
+  ['gl','Ice hockey','world body IIHF hit by cyberattack'],
+  ['am','US','Rubio: no evidence outages were cyberattacks'],
+  ['am','Anthropic','due to price record IPO tonight, trade Thursday'],
+  ['am','Minnesota','man charged over attack on Somali driver'],
+  ['eu','Ireland','man indicted in US over Shannon C-130 damage'],
   ['as','India','William and Kate in Delhi to meet Modi'],
-  ['as','Pakistan','court hears Imran Khan appeals'],
-  ['am','Colombia','Hegseth hands over first US C-130'],
+  ['as','Pakistan','high court hears Imran Khan’s appeals'],
+  ['am','Colombia','Hegseth hands over first US C-130 aircraft'],
   ['am','Venezuela','unions call 24-hour strike over pay'],
-  ['am','Paraguay','attorney general resigns'],
-  ['af','Mauritius','gives UK until December on Chagos'],
-  ['af','S. Africa','reprimands Nigeria’s new envoy'],
-  ['af','Guinea','224 jailed over illegal gold mining'],
-  ['af','Uganda','alarm over jailed Besigye’s health'],
-  ['af','Zimbabwe','5 in SA court over Ukraine war plot'],
-  ['af','Kenya','WFP feeds families fleeing Ethiopia'],
-  ['af','Ethiopia','El Niño, Iran war may add 1m poor'],
-  ['af','Malawi','no end date for fuel shortage'],
-  ['pa','Cook Islands','Cyclone Xavier warnings'],
-  ['gl','WHO','candidates for chief make their pitch'],
+  ['am','Paraguay','attorney general resigns before impeachment'],
+  ['af','Mauritius','gives UK until December to hand over Chagos'],
+  ['af','South Africa','reprimands Nigeria’s new envoy over posts'],
+  ['af','Guinea','224 jailed over illegal gold mining in Siguiri'],
+  ['af','Uganda','family alarmed at jailed Besigye’s health'],
+  ['af','Zimbabweans','in SA court over plan to fight in Ukraine'],
+  ['af','Kenya','WFP feeds families who fled Ethiopia'],
+  ['af','Ethiopia','El Niño, Iran war may push 1m into poverty'],
+  ['af','Malawi','no end date for fuel shortage, minister says'],
+  ['pa','Cook Islands','Cyclone Xavier warnings for northern atolls'],
+  ['gl','WHO','director-general candidates make their pitch'],
   ['gl','FIFA','France’s Diallo to challenge Infantino'],
-  ['gl','Bond','Bezos “heavily involved” in casting']
+  ['gl','Film','Bezos “heavily involved” in picking new Bond']
 ];
 const ol = document.getElementById('list');
 LIST.forEach((it, i) => {
@@ -398,10 +379,6 @@ LIST.forEach((it, i) => {
   li.innerHTML = `<span class="n" style="background:var(--${it[0]})">${i + 15}</span><b>${it[1]}:</b> ${it[2]}`;
   ol.appendChild(li);
 });
-
-// legend placement
-const lg = document.getElementById('legend');
-lg.style.left = '344px'; lg.style.top = '732px'; lg.style.width = '230px';
 </script>
 </body>
 </html>
