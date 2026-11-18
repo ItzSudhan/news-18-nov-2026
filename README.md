@@ -6,8 +6,8 @@
 
 The world's news of Wednesday 18 November 2026 in one picture: an illustrated world map with the day's biggest
 stories drawn as vignettes on their locations (Iran's drone attack on a US base in Kuwait, Putin and Xi at APEC in
-Shenzhen, Russian strikes on Odesa, Trump's Philippines trade claim, Voyager 1 reaching one light-day from Earth and
-more), plus a numbered list of further stories from every continent. The research log with sources is in
+Shenzhen, Russian strikes on Odesa, Trump's Philippines trade claim, Voyager 1 reaching one light-day from Earth,
+Saudi-led strikes on Yemen and more), plus a numbered list of further stories from every continent: 47 in all. The research log with sources is in
 `stories.md`; the layout is hand-written HTML and SVG in `layout/map.html`, rendered to `entry.png` by `render.sh`.
 `main.py` checks the image and copies it to `/output/entry.png`.
 

@@ -88,7 +88,7 @@
 
 <header>
   <div class="kicker">THE WORLD ON</div>
-  <div class="count"><b>46</b> STORIES · <b>6</b> CONTINENTS</div>
+  <div class="count"><b>47</b> STORIES · <b>6</b> CONTINENTS</div>
   <h1>WEDNESDAY 18 NOVEMBER 2026</h1>
 </header>
 
@@ -266,7 +266,7 @@ const V = {
     <text x="135" y="24" font-family="Avenir Next Condensed" font-weight="800" font-size="10" fill="#0f1b2d" text-anchor="middle">DRAFT 1</text>
     <g stroke="#9aa3ad" stroke-width="2"><path d="M112 32h46M112 40h46M112 48h40M112 56h46M112 64h34"/></g>
     <path d="M110 18 L160 76 M160 18 L110 76" stroke="#d1394b" stroke-width="5"/>
-    <rect x="160" y="56" width="34" height="18" rx="3" fill="#003399"/><text x="177" y="69" font-family="Avenir Next Condensed" font-weight="800" font-size="10" fill="#ffcc00" text-anchor="middle">EU: NO</text>`,
+    <rect x="160" y="56" width="34" height="18" rx="3" fill="#003399"/><text x="177" y="69" font-family="Avenir Next Condensed" font-weight="800" font-size="10" fill="#ffcc00" text-anchor="middle">SPLIT</text>`,
   ethiopia: `<rect width="200" height="90" fill="#f4e1bd"/>
     <path d="M0 62 Q30 40 60 56 T120 50 T200 58 V90 H0z" fill="#c69a5b"/>
     <path d="M0 74 Q50 60 100 72 T200 70 V90 H0z" fill="#a97a43"/>
@@ -284,6 +284,12 @@ const V = {
     <g fill="#2a3446"><circle cx="30" cy="62" r="4"/><circle cx="48" cy="64" r="4"/><circle cx="66" cy="62" r="4"/><circle cx="84" cy="64" r="4"/><circle cx="102" cy="62" r="4"/><circle cx="120" cy="64" r="4"/><circle cx="138" cy="62" r="4"/><circle cx="156" cy="64" r="4"/><circle cx="174" cy="62" r="4"/>
     <rect x="26" y="66" width="8" height="18"/><rect x="44" y="68" width="8" height="18"/><rect x="62" y="66" width="8" height="18"/><rect x="80" y="68" width="8" height="18"/><rect x="98" y="66" width="8" height="18"/><rect x="116" y="68" width="8" height="18"/><rect x="134" y="66" width="8" height="18"/><rect x="152" y="68" width="8" height="18"/><rect x="170" y="66" width="8" height="18"/></g>
     <g stroke="#2a3446" stroke-width="2"><path d="M48 58 V64M156 58V64"/></g>`,
+  yemen: `<rect width="200" height="90" fill="#f2c48d"/>
+    <path d="M0 64 L24 46 L44 58 L70 40 L96 60 L130 44 L160 58 L200 42 V90 H0z" fill="#a8744a"/>
+    <g fill="#6b4a33"><rect x="30" y="52" width="10" height="12"/><rect x="44" y="48" width="8" height="16"/><rect x="140" y="50" width="12" height="14"/><rect x="156" y="54" width="9" height="10"/></g>
+    <g fill="#7d7d86"><circle cx="58" cy="40" r="7"/><circle cx="66" cy="34" r="6"/><circle cx="120" cy="38" r="7"/><circle cx="128" cy="32" r="5"/></g>
+    <g fill="#ff7b2e"><circle cx="60" cy="50" r="6"/><circle cx="122" cy="48" r="6"/></g><g fill="#ffd23f"><circle cx="60" cy="51" r="3"/><circle cx="122" cy="49" r="3"/></g>
+    <g fill="#2b3440"><path d="M84 30 l18 3 l-6 2 l-12 0z"/><path d="M150 28 l18 3 l-6 2 l-12 0z"/></g>`,
   gta: `<rect width="200" height="90" fill="#2b1846"/>
     <circle cx="160" cy="44" r="28" fill="#fff" stroke="#f5b82e" stroke-width="4"/>
     <path d="M160 44 V22 M160 44 V24" stroke="#0f1b2d" stroke-width="3.5" stroke-linecap="round"/><circle cx="160" cy="44" r="3" fill="#0f1b2d"/>
@@ -300,16 +306,17 @@ const CARDS = [
   { n:1, big:true, col:C.me, x:640, y:290, w:180, ih:74, v:'iran', tag:'Kuwait · Bahrain', h:'Iran says its drones hit US base in Kuwait', p:'Kuwait, Bahrain report intercepts; Gulf states condemn', dot:[47.98,29.37], from:[652,0] },
   { n:2, big:true, col:C.as, x:788, y:112, w:228, ih:84, v:'putinxi', tag:'Shenzhen', h:'Putin and Xi meet as APEC summit opens', p:'Xi: Moscow, Beijing should “lead” a multipolar world', dot:[114.06,22.54], from:[830,0] },
   { n:3, big:true, col:C.eu, x:564, y:112, w:212, ih:80, v:'odesa', tag:'Odesa', h:'Russian strikes kill 4 in central Odesa', p:'141 drones launched overnight, Kyiv says', dot:[30.73,46.48], from:[606,0] },
-  { n:4, big:true, col:C.as, x:672, y:562, w:196, ih:70, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” trade deal in Manila', p:'Philippine officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
+  { n:4, big:true, col:C.as, x:672, y:572, w:196, ih:70, v:'trumpph', tag:'Manila', h:'Trump hails “biggest” trade deal in Manila', p:'Philippine officials say nothing signed yet', dot:[120.98,14.6], from:[850,0] },
   { n:5, big:true, col:C.gl, x:176, y:112, w:212, ih:80, v:'voyager', tag:'Deep space', h:'Voyager 1 reaches one light-day from Earth', p:'NASA probe, launched 1977, is 25.9 bn km away', dot:null },
   { n:6, col:C.as, x:872, y:300, w:144, ih:58, v:'nvidia', tag:'Seoul', h:'Nvidia’s $116bn quarter lifts Asian stocks', p:'Revenue doubled from a year ago', dot:[127,37.57], from:[884,0] },
   { n:7, col:C.eu, x:318, y:318, w:152, ih:60, v:'uk', tag:'London', h:'UK inflation rises to 3.6%', p:'October, up from 3.5% (ONS)', dot:[-0.13,51.5], from:[0,397] },
-  { n:8, col:C.gl, x:318, y:458, w:152, ih:60, v:'cop', tag:'Antalya · COP31', h:'COP31: EU rejects first draft deal', p:'Second text expected', dot:[30.7,36.9], from:[0,476] },
+  { n:8, col:C.gl, x:318, y:458, w:152, ih:60, v:'cop', tag:'Antalya · COP31', h:'COP31 draft splits nations on fossil fuels', p:'Arab Group, Russia reject it; new text due', dot:[30.7,36.9], from:[0,476] },
   { n:9, col:C.eu, x:400, y:112, w:152, ih:60, v:'romania', tag:'Vrancea', h:'Romania’s strongest quake since 2018', p:'Felt in Ukraine, Moldova', dot:[26.5,45.7], from:[536,0] },
   { n:10, col:C.am, x:8, y:112, w:158, ih:60, v:'alaska', tag:'Alaska', h:'Democrat Peltola flips Senate seat', p:'Unseats Republican Sullivan', dot:[-149.9,61.2], from:[53,0] },
   { n:11, col:C.af, x:494, y:562, w:162, ih:60, v:'ethiopia', tag:'Badme', h:'Ethiopia–Eritrea border clashes', p:'Fears of a wider war', dot:[37.8,14.9], from:[606,0] },
   { n:12, col:C.am, x:8, y:604, w:162, ih:60, v:'chile', tag:'Santiago', h:'Chile unions march against Kast cuts', p:'Nationwide CUT protest over the budget', dot:[-70.65,-33.45], from:[0,680] },
   { n:13, col:C.pa, x:880, y:470, w:136, ih:54, v:'gta', tag:'New Zealand', h:'GTA VI unlocks, NZ first', p:'At midnight local time', dot:[174.76,-36.85], from:[1004,0] },
+  { n:15, col:C.me, x:666, y:464, w:156, ih:28, v:'yemen', tag:'Sanaa · Hodeidah', h:'Saudi-led jets pound Yemen', p:'Houthis say at least 17 killed', dot:[44.2,15.35], from:[0,520] },
   { n:14, col:C.am, x:8, y:376, w:160, ih:60, v:'mexico', tag:'Monterrey', h:'Mexico beat Jamaica, reach Final Four', p:'Márquez’s first win as coach', dot:[-100.3,25.67], from:[0,480] }
 ];
 
@@ -341,7 +348,7 @@ for (const c of CARDS) {
 // ---------- The numbered list ----------
 const LIST = [
   ['me','Israel','new majority starts bills to undo judicial overhaul'],
-  ['me','Saudis','say they downed Houthi missile aimed at Riyadh'],
+  ['me','Israel','court holds Gaza doctor Abu Safiya 6 more months'],
   ['me','Iran','army “monitoring” as a third US carrier arrives'],
   ['me','Iraq','Quds Force chief Qaani in Baghdad for talks'],
   ['me','Syria','church leaders condemn attacks on Christians'],
@@ -376,7 +383,7 @@ const LIST = [
 const ol = document.getElementById('list');
 LIST.forEach((it, i) => {
   const li = document.createElement('li');
-  li.innerHTML = `<span class="n" style="background:var(--${it[0]})">${i + 15}</span><b>${it[1]}:</b> ${it[2]}`;
+  li.innerHTML = `<span class="n" style="background:var(--${it[0]})">${i + 16}</span><b>${it[1]}:</b> ${it[2]}`;
   ol.appendChild(li);
 });
 </script>

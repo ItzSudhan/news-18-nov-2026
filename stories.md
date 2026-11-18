@@ -17,7 +17,8 @@ and was checked against a dated source. Claims made by one party are attributed 
 | 7 | Europe | Romania's strongest quake since 2018 | M5.7 (INFP), 02:50 local, 120 km deep; felt in Ukraine and Moldova; minor injuries, no deaths reported | https://kyivindependent.com/strongest-earthquake-in-years-hits-romania-tremors-felt-in-ukraine/ |
 | 8 | Europe | Russian strikes kill 4 in central Odesa | Odesa strike kills 4, injures 9; 141 drones launched overnight; attacks killed 5 across Ukraine in past day | https://kyivindependent.com/news-archive/ (18 Nov feed) |
 | 9 | Europe | UK inflation rises to 3.6% | ONS: CPI 3.6% in 12 months to October, up from 3.5% | https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026 |
-| 10 | Climate | COP31: EU rejects first draft | EU rejected first draft of final agreement in Antalya; second text expected; finance "blocked" | EFE agenda (above) · AA briefing (above) |
+| 10 | Climate | COP31 draft splits nations on fossil fuels | Draft calls for faster fossil-fuel phase-out; Arab Group and Russia reject it; EU's Hoekstra: "shopping list"; Bowen: at least one more draft; EU rejected first draft (EFE) | https://www.technology.org/2026/11/18/cop31-draft-fossil-fuel-phase-out-antalya-bowen/ · https://www.arabnews.com/middle-east/tensions-rise-over-cop31-draft-deal-3012534 · EFE agenda (above) |
+| 10b | Middle East | Saudi-led jets pound Yemen | Coalition (Maj. Gen. Turki al-Malki) says major air attack on Sanaa and three provinces; Houthi health ministry: at least 17 killed, 15 at a Hodeida sponge factory; Houthi cruise missiles at Riyadh, two destroyed | https://www.clickorlando.com/news/world/2026/11/18/saudi-backed-forces-launch-major-attack-on-houthis-and-other-mideast-news/ (AP) |
 | 11 | Americas | Democrat Peltola flips Alaska Senate seat | AP called race for Mary Peltola over Dan Sullivan Tuesday night; AA: gives Democrats 56-44 | https://www.aljazeera.com/news/2026/11/18/mary-peltola-wins-alaska-senate-seat-in-another-democratic-win |
 | 12 | Africa | Ethiopia–Eritrea border clashes | Skirmishes and artillery near Badme; fears of wider war | https://allafrica.com/stories/202611180083.html · DW via allAfrica 18 Nov |
 | 13 | Middle East | Knesset bloc moves to repeal judicial overhaul | New majority (speaker Kahana elected 66-52) starts bills to reverse overhaul laws | https://www.timesofisrael.com/liveblog-november-18-2026/ |
@@ -29,7 +30,8 @@ and was checked against a dated source. Claims made by one party are attributed 
 
 | Region | Line | Source |
 |--------|------|--------|
-| Gulf | Saudi says it downed Houthi cruise missile aimed at Riyadh | https://www.timesofisrael.com/liveblog-november-18-2026/ |
+| Israel | Court extends detention of Gaza doctor Hussam Abu Safiya by six months | AP roundup (above) |
+| Gulf | (folded into the Yemen card) Saudi says it downed Houthi cruise missiles aimed at Riyadh | https://www.timesofisrael.com/liveblog-november-18-2026/ |
 | Iran | Army chief: forces "monitoring" as third US carrier arrives | Al Jazeera live (above) |
 | Iraq | IRGC Quds chief Qaani in Baghdad amid Kataib Hezbollah tensions | https://www.aljazeera.com/news/2026/11/18/top-irgc-commander-in-iraq-for-talks-amid-kataib-hezbollah-tensions |
 | Syria | Church leaders condemn kidnappings of Christians | ToI live (above) |
@@ -68,3 +70,10 @@ and was checked against a dated source. Claims made by one party are attributed 
 - Not confirmed: Colombia Q3 GDP (-0.8% vs +0.5% in two sources), Thaçi obstruction sentence, Weah arrest (rumour,
   denied by government), Gmail outage.
 - After the build cut-off: US market close, Anthropic IPO price.
+- EU €45 bn Ukraine loan for 2027: the Commission proposal dates from 30 October, so not new on 18 November.
+
+## Refresh at 13:20 UTC
+
+GTA VI confirmed live in New Zealand at 11:00 UTC (https://windowsreport.com/gta-6-officially-releases-in-new-zealand-ahead-of-the-world/).
+Odesa toll unchanged at 4. Added the Yemen air campaign as a map card; COP31 card reworded to the wider split.
+Final count: 15 on the map, 32 in the list, 47 in all.
